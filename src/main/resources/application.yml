@@ -1,0 +1,37 @@
+#server:
+#  port: 8888
+##  ssl:
+##    key-store: keystore.p12
+##    key-store-password: 123456
+##    key-store-type: PKCS12
+##    key-alias: tomcat
+
+facebook:
+  client:
+    clientId: 332374535054693
+    clientSecret: c967223943d07381c5bba10f9bb0f64a
+    accessTokenUri: https://graph.facebook.com/oauth/access_token
+    userAuthorizationUri: https://www.facebook.com/dialog/oauth
+    tokenName: oauth_token
+    authenticationScheme: query
+    clientAuthenticationScheme: form
+    scope: email public_profile
+  resource:
+    userInfoUri: https://graph.facebook.com/me?fields=id,first_name,middle_name,last_name,name,email
+
+google:
+  client:
+    clientId: 413589711567-eitj50qudg2agdkig3ijok6jgjau0jui.apps.googleusercontent.com
+    clientSecret: arD7B5o9AB6nDIkyP4qDjLoZ
+    accessTokenUri: https://www.googleapis.com/oauth2/v4/token
+    userAuthorizationUri: https://accounts.google.com/o/oauth2/v2/auth
+    clientAuthenticationScheme: form
+    scope: profile email
+  resource:
+    userInfoUri:  https://www.googleapis.com/oauth2/v3/userinfo
+
+
+security:
+  oauth2:
+    client:
+      preEstablishedRedirectUri: http://localhost:8888/
